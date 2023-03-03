@@ -668,6 +668,8 @@
 			resets = <&ccu RST_BUS_MMC0>;
 			reset-names = "ahb";
 			cap-sd-highspeed;
+			sd-uhs-sdr50:
+			sd-uhs-sdr104;
 			max-frequency = <150000000>;
 			no-mmc;
 			status = "disabled";
@@ -684,6 +686,8 @@
 			resets = <&ccu RST_BUS_MMC1>;
 			reset-names = "ahb";
 			cap-sd-highspeed;
+			sd-uhs-sdr50:
+			sd-uhs-sdr104;
 			max-frequency = <150000000>;
 			no-mmc;
 			status = "disabled";
@@ -1208,5 +1212,17 @@
 			#address-cells = <0>;
 			#interrupt-cells = <2>;
 		};
+		
+		g2d: g2d@5410000{
+			compatible = "allwinner,sunxi-g2d";
+			reg = <0x05410000 0x3ffff>;
+			interrupts = <105 IRQ_TYPE_LEVEL_HIGH>;
+			clocks = <&ccu CLK_BUS_G2D>, <&ccu CLK_G2D>, <&ccu CLK_MBUS_G2D>;
+			resets = <&ccu RST_BUS_G2D>;
+			iommus = <&iommu 3>;
+			status = "okay";
+		};
+
+
 	};
 };
