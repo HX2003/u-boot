@@ -1218,6 +1218,7 @@
 			reg = <0x05410000 0x3ffff>;
 			interrupts = <105 IRQ_TYPE_LEVEL_HIGH>;
 			clocks = <&ccu CLK_BUS_G2D>, <&ccu CLK_G2D>, <&ccu CLK_MBUS_G2D>;
+			clock-names = "bus", "g2d", "mbus_g2d";
 			resets = <&ccu RST_BUS_G2D>;
 			iommus = <&iommu 3>;
 			status = "okay";
